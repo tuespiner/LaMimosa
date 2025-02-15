@@ -1,0 +1,534 @@
+@font-face {
+    font-family: fuente-elena;
+    src: url(Fonts/Bodoni_Moda/static/BodoniModa_18pt-Bold.ttf);
+}
+@font-face {
+    font-family: fuente-elena-2;
+    src: url(Fonts/Yellowtail/Yellowtail-Regular.ttf);
+}
+@font-face {
+    font-family: fuente-elena-3;
+    src: url(Fonts/Satisfy/Satisfy-Regular.ttf);
+}
+body{
+    width: 100%;
+    margin: 0px;
+    overflow-x: hidden;
+    & header{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & img{
+            width: 100px;
+            border-radius: 100px;
+        }
+        & nav{
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 2rem;
+            border: 2px solid black;
+            background-color: rgba(255, 255, 255, 0.211);
+            & button{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: transparent;
+                transition: .3s;
+                border: 0px; 
+                padding: .5rem 0rem;
+                font-weight: bold;
+                border-bottom: 1px solid rgba(0, 0, 0, 0);
+                &:hover{
+                    cursor: pointer;
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+        &::after{
+            content: '';
+            width: 100px;
+        }
+    }
+    & main{
+        & .Inicio{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url(Imagenes/fotoInicio.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            & h1{
+                font-size: 200px;
+                font-family: fuente-elena;
+                margin: 0px;
+                line-height:100%;
+                font-weight: 900;
+            }
+            & h3{
+                font-family: fuente-elena-3;
+                margin: 0px;
+                color: rgba(0, 0, 0, 0.749);
+                font-size: 30px;
+                letter-spacing: 5px;
+                position: absolute;
+                bottom: 3rem;
+                right: 3rem;
+            }
+        }
+        & .masPopulares{
+            min-height: calc(100vh - 10rem);
+            padding: 5rem;
+            width: calc(100% - 10rem);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 4rem;
+            & h2{
+                font-family: fuente-elena;
+                font-size: 80px;
+                margin: 0px;
+                border-bottom: 2px solid #2e6647;
+                border-top: 2px solid #2e6647;
+            }
+            & > div{
+                display: grid;
+                grid-template-columns: repeat(4, 300px);
+                grid-template-rows: repeat(2, 400px);
+                gap: 1px;
+                & .productoTop{
+                    width: 100%;
+                    height: 400px;
+                    background-color: white;
+                    border: 1px solid #2e6647;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 300px 1fr;
+                    & img{
+                        width: 100%;
+                    }
+                    & div{
+                        padding: 1rem;
+                        width: calc(100% - 2rem);
+                        height: calc(100%  - 2rem);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        & h3,& p{
+                            margin: 0px;
+                        }
+                        & h3{
+                            font-family: fuente-elena;
+                            font-weight: bold;
+
+                        }
+                        & p{
+                            font-family: fuente-elena-3;
+                            color: rgba(0, 0, 0, 0.761);
+                            padding-top: .5rem;
+                            border-top: 1px solid #2e6647;
+                        }
+                    }
+                }
+                & .imagenProductoTop{
+                    width: 301px;
+                    height: 401px;
+                    background-image: url(Imagenes/fotoPlanta1.jpg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &:nth-child(4){
+                        background-image: none;
+                    }
+                    &:nth-child(8){
+                        background-image: url(Imagenes/foitoPlanta2.jpg);
+                    }
+                }
+            }
+        }
+        & .catalogo{
+            background-color: #2e6647;
+            padding: 2rem;
+            width: calc(100% - 4rem);
+            min-height: 50vh;
+            & .catalogoDiv{
+                & h2{
+                    font-family: fuente-elena-1;
+                    margin: 0px;
+                    color: white;
+                    font-size: 80px;
+                    border-top: 3px solid white;
+                    border-bottom: 3px solid white;
+                    width: fit-content;
+                }
+                & .dosCategorias{
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+                    width: 100%;
+                    gap: 2rem;
+                    
+                }
+                & .categoria{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    & h3{
+                        margin:.5rem;
+                        font-family: fuente-elena-3;
+                        color: white;
+                        font-size: 70px;
+                    }
+                    & .carruselCatalogo{
+                        display: flex;
+                        width: 100%;
+                        height: 350px;
+                        border-top: 2px solid white;
+                        border-bottom: 2px solid white;
+                        overflow: scroll;
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                        & .elemento{
+                            min-width: 300px;
+                            height: 350px;
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-rows: 250px .5fr .5fr;
+                            border-left: 1px solid white;
+                            border-right: 1px solid white;
+                            color: white;
+                            & button{
+                                font-family: fuente-elena-1;
+                                --tamano: calc(100% - 1rem);
+                                grid-row: 3/4;
+                                grid-column: 2/3;
+                                margin: .5rem;
+                                width: var(--tamano);
+                                min-height: var(--tamano);
+                                background-color: rgba(255, 255, 255, 0.183);
+                                border: 2px solid white;
+                                color: white;
+                                transition: .3s;
+                                font-size: 17px;
+                                &:hover{
+                                    background-color: rgba(255, 255, 255, 0.438);
+                                    cursor: pointer;
+                                    scale: 1.1;
+                                }
+                            }
+                            & span{
+                                grid-row: 3/4;
+                                grid-column: 1/2;
+                                padding: .5rem;
+                                align-self: center;
+                                font-family: fuente-elena-3;
+                                font-size: 20px;
+                                color: white;
+                            }
+                            & p{
+                                height: calc(100% - .5rem - 2px);
+                                font-family: fuente-elena-1;
+                                font-size: 20px;
+                                margin: 0rem .5rem;
+                                padding: .25rem 0rem;
+                                grid-row: 2/3;
+                                grid-column: 1/3;
+                                border-bottom: 2px solid white;
+                                display: flex;
+                                align-items: center;
+                            }
+                            & div{
+                                grid-row: 1/2;
+                                grid-column: 1/3;
+                                background-image: url(Imagenes/champu.png);
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                            &:first-child{
+                                border-left: 2px solid white;
+                            }
+                            &:last-child{
+                                border-right: 2px solid white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .sobreNosotros{
+            width: calc(100% - 10rem);
+            min-height: 50vh;
+            padding: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & .sobreNosotrosDiv{
+                color: #2e6647;
+                & p{
+                    font-size: 30px;
+                    width: 80%;
+                    & span{
+                        font-weight: bold;
+                        font-family: fuente-elena-3;
+                    }
+                }
+                & h2{
+                    font-size: 80px;
+                    font-family: fuente-elena-1;
+                    margin: 0px;
+                    justify-self: end;
+                }
+                & .carrousel{
+                    margin-top: 5rem;
+                }
+            }
+        }
+    }
+    & footer{
+        
+        min-height: 40vh;
+        background-color: #2e6647;
+        & .footer{
+            padding: 2rem;
+            width: calc(100% - 4rem);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            & > a{
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                justify-self: end;
+                transition: .3s;
+                clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 0 100%);
+                &:hover{
+                    scale: 1.2;
+                    cursor: pointer;
+                    box-shadow: 0px 0px 10px 0px white;
+                }
+            }
+            & > p{
+                grid-column: 2/3;
+                grid-row: 2/-1;
+                justify-self: center;
+                align-self: end;
+                font-size: 20px;
+                color: white;
+                padding: .5rem 0rem;
+                margin: 0px;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+            & nav{
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                width: 100%;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                & button{
+                    width: 80px;
+                    border-radius: 100px;
+                    border: 0px;
+                    transition: .3s;
+                    background-color: white;
+                    &:hover{
+                        box-shadow: 0px 0px 15px -5px white;
+                        scale: 1.2;
+                        cursor: pointer;
+                    }
+                }
+            }
+            & .iframe{
+                grid-row: 1 / -1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & iframe{
+                    width: 100%;
+                }
+                & h3{
+                    margin: 1rem;
+                    font-size: 35px;
+                    border-top: 2px solid #2e6647;
+                    border-bottom: 2px solid #2e6647;
+                    background-color: rgba(255, 255, 255, 0.291);
+                    font-family: fuente-elena;
+                    font-weight: bold;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:  1280px) {
+    
+    body{
+        & main{
+            .Inicio{
+                & h1{
+                    font-size: 130px;
+                }
+            }
+            & .masPopulares{
+                & > div{
+                    grid-template-columns: repeat(2, 300px);
+                    grid-template-rows: repeat(4, 400px);
+                    & .imagenProductoTop{
+                        &:nth-child(4){
+                            grid-row: 4/5;
+                        }
+                        &:nth-child(8){
+                            grid-row: 3/4;
+                            grid-column: 2/3;
+                        }
+                    }
+                }
+            }
+            & .catalogo{
+                & .catalogoDiv{
+                    & .dosCategorias{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+        & footer{
+            & .footer{
+                grid-template-columns: 1fr 4fr 1fr;
+                grid-template-rows: 1fr 4fr 1fr;
+                & .iframe{
+                    grid-row: 2/3;
+                    grid-column: 1/4;
+                    width: 100%;
+                }
+                & a{
+                    grid-row: 1/2;
+                    grid-column: 3/4;
+                }
+            }
+        }
+    }
+}
+@media (max-width:  830px){
+    body{
+        & main{
+            & .Inicio{
+                text-align: center;
+                & h1{
+                    font-size: 80px;
+                }
+                & h3{
+                    color: black;
+                    text-shadow: 0px 0px 5px white;
+                    font-size: 20px;
+                }
+            }
+            & .masPopulares{
+                & h2{
+                    font-size: 50px;
+                    text-align: center;
+                }
+            }
+            & .catalogo{
+                & .catalogoDiv{
+                    & .categoria{
+                        & .carruselCatalogo{
+                            & .elemento{
+                                min-width: 200px;
+                                height: 235px;
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                grid-template-rows: 165px .5fr .5fr;
+                                & button{
+                                    font-size: 12px;
+                                }
+                            }
+                            &.dosCategoriasP{
+                                & .elemento{
+                                    min-width: 200px;
+                                    height: 235px;
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-template-rows: 165px .5fr .5fr;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+} 
+
+@media (max-width:  660px){
+    body{
+        & main{
+            & .Inicio{
+                & h3{
+                    right: 1rem;
+                }
+            }
+            & .masPopulares{
+                & > div{
+                    grid-template-columns: 300px!important;
+                    grid-template-rows: repeat(7, 400px)!important;
+                    & .imagenProductoTop{
+                        &:nth-child(4){
+                            grid-row: 8/9;
+                            display: none;
+                        }
+                        &:nth-child(8){
+                            grid-row: 5/6;
+                            grid-column: 1/2;
+                        }
+                    }
+                }
+            }
+            & .catalogo{
+                & .catalogoDiv{
+                    & h2{
+                        font-size: 50px;
+                    }
+                    & .categoria{
+                        & h3{
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            & .sobreNosotros{
+                padding: 1rem;
+                width: calc(100% - 2rem);
+                & .sobreNosotrosDiv{
+                    & p{
+                        font-size: 25px;
+                        width: 100%;
+                    }
+                    & h2{
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+        & footer{
+            & .footer{
+                & a{
+                    display: none;
+                }
+            }
+        }
+    }
+}
